@@ -1,0 +1,55 @@
+﻿@page
+@model Abby_Razor.Pages.Categories.IndexModel
+
+<div class="ccontainer p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Category Lis</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i>&nbsp; Create a New Category
+            </a>
+
+        </div>
+    </div>
+
+    <br />
+
+    <table class="table table-striped-columns" style="width : 100%">
+
+        <thead>
+            <tr>
+                <th>
+                    Category Name
+                </th>
+                <th>
+                    Display Order
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model.Categories)
+            {
+                <tr>
+                    <td width="50%">@obj.Name</td>
+                    <td width="30%">@obj.DisplayOrder</td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-warning">
+                            <i class="bi bi-pencil-square"></i> &nbsp; Edit
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-page="Delete" asp-route-id="@obj.Id" class="btn btn-danger">
+                            <i class="bi bi-trash"></i>&nbsp; Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
+

@@ -1,0 +1,43 @@
+﻿@page
+@model Abby_Razor.Pages.Categories.DeleteModel
+
+
+<form method="post">
+    <input asp-for="Category.Id" hidden />
+
+
+    <div class="border p—3 mt—5">
+
+
+        <div class="row pb—3" style="margin-left:auto">
+            <h2 class="text-primary">Delete Category</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Category.Name" style="margin-left: 10px;"></label>
+            <input asp-for="@Model.Category.Name" disabled type="text" class="form-control" />
+
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Category.DisplayOrder" style="margin-left: 10px;"></label>
+            <input asp-for="@Model.Category.DisplayOrder" disabled type="text" class="form-control" />
+
+
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+
+        <a asp-page="Index" class="btn btn-primary m-3" style="width:150px">
+            <i class="bi bi-arrow-return-left"></i>&nbsp; Back to List
+        </a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

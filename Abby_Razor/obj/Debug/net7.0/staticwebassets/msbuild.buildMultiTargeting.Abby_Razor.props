@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Abby_Razor.props" />
+</Project>
